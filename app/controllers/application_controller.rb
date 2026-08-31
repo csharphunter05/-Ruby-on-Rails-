@@ -4,4 +4,14 @@ class ApplicationController < ActionController::Base
 
   # Changes to the importmap will invalidate the etag for HTML responses
   stale_when_importmap_changes
+
+  protect_from_forgery with: :exception
+
+  def hola
+    render html: "hola, mundo!"
+  end
+
+  def mensaje
+    render html: "¡Bienvenido a mi primera aplicación en Rails!"
+  end
 end
